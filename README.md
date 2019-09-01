@@ -1,3 +1,11 @@
+# Course Book
+
+Create a course, add students, then easily pick a random student, or create a list of random pairs of students from your roster. 
+
+This app stores everything in local storage so all of the courses and students should be there again when you return _provided your are visitng the site from the same computer!_.
+
+--- 
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
