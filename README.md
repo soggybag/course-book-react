@@ -2,7 +2,56 @@
 
 Create a course, add students, then easily pick a random student, or create a list of random pairs of students from your roster. 
 
-This app stores everything in local storage so all of the courses and students should be there again when you return _provided your are visitng the site from the same computer!_.
+Check it out live on GItHub Pages [here](https://soggybag.github.io/course-book-react/). 
+
+This app stores everything in local storage so all of the courses and students should be there again when you return _provided your are visitng the site from the same computer!_. 
+
+## Features
+
+Manage a list of courses in the left column. You can add and remove courses. _There is no warning when removing a course_ all of your students are removed when removing a course. 
+
+- Type a name into the field and click + to add a course. 
+  - _Names must be unique_
+- Select a class by choosing it in the left column. 
+- Remove a course by clicking the - nect to the course name. 
+  - There is no warning, removing a course removes all students in that courses roster. 
+
+Add students to a course in the center column. Pick a random student by clicking "Pick Student". _Picking a student will not repeat a pick until all have been picked_.
+
+- Add students name click + to add that student to the selected course
+- Click - next to a student name to remove that student from the course list. 
+  - There is no warnings 
+- Click "Pick Student" to display a random student in the right column. 
+  - Students are not repeated until all have been chosen
+- Click "Pair Students" to generate a random list of student pairs shown in the right column. 
+  - Pairs are random and may be repeated.
+
+## Contributions
+
+If you'd like to contribut to this project please do! Take a look at the list of todos below. 
+
+## Todo
+
+- CSS styles improvements
+  - Add some color
+  - + and - should be larger
+  - + and - buttons should equal height and width
+  - Responsive design
+    - Shows single column on mobile with columns sliding left and right. 
+- UI Improvements 
+  - Should show a wanring and not clear when entering a name that exists for a course or student
+  - Students currently display as a buttons. There is no function for clicking a student they should display as text. Like the names in the pairs list. 
+    - Editing students might be useful in the future or clicking a student to select a student not randomly might be good.
+- PWA FTW! This could be turned into a Progressive Web App. 
+  - Should run offline
+- Names of students and courses muct be unique
+  - Need to check case on this. Currently names are trimmed of white space. Names should keep case but checked for match regardless of case. 
+- Need feedback on usage 
+- All pairs combinations 
+  - The app should generate a different list of pairs until all possible combinations have been used. 
+- Track the number of times a student has been picked. 
+  - Count the number of times a student has been picked. 
+  - Show the count next to the name. 
 
 --- 
 
