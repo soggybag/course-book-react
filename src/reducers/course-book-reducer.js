@@ -1,5 +1,5 @@
-import { ADD_COURSE, SELECT_COURSE, ADD_STUDENT, PICK_STUDENT, REMOVE_COURSE, PAIR_STUDENTS } from '../actions'
-import { random } from '../utils'
+import { ADD_COURSE, SELECT_COURSE, ADD_STUDENT, PICK_STUDENT, REMOVE_COURSE, REMOVE_STUDENT, PAIR_STUDENTS } from '../actions'
+import { random, randomArray } from 'really-random'
 
 const defaultState = () => {
   return {
@@ -12,6 +12,8 @@ const makeCourse = (name) => {
   return {
     name, 
     students: [],
+    studentPool: [],
+    studentPairs: [],
     currentStudent: ''
   }
 }
@@ -19,6 +21,7 @@ const makeCourse = (name) => {
 const courseBookReducer = (state = defaultState(), action) => {
   const { type, payload } = action
   const { courses, selectedCourse } = state
+  const course = courses[selectedCourse]
 
   if (type === ADD_COURSE) {
     // ADD Course 
@@ -33,50 +36,87 @@ const courseBookReducer = (state = defaultState(), action) => {
     return { ...state, courses: coursesCopy }
 
   } else if (type === SELECT_COURSE) {
-    // SELECT Course
+    // * SELECT Course
     const newState = { ...state, selectedCourse: payload } 
     return newState
 
   } else if (type === ADD_STUDENT) {
     // ADD Student
     const studentName = payload.trim()
-    const course = courses[selectedCourse]
     const { students } = course
-
-    console.log(students)
-
+    
+    // Avoid dudplicate name
     if (students.indexOf(studentName) !== -1) {
       return state
     }
 
+    // Add new student
     const newStudents = [ ...students, studentName ]
     const newState = { ...state }
     newState.courses[selectedCourse].students = newStudents
-
+   
     return newState
 
   } else if (type === PICK_STUDENT) {
-    // PICK Student
-    const course = courses[selectedCourse]
-    const { students } = course
-    const student = students[random(students.length)]
+    // * PICK Student
+    const { students, studentPool } = course
+    let newPool
+
+    if (studentPool.length === 0) {
+      // shuffle students and fill pool
+      newPool = [ ...randomArray(students) ]
+    } else {
+      newPool = [ ...studentPool ]
+    }
+
+    // select random student and remove them from pool
+    const student = newPool.splice(random(studentPool.length), 1)[0]
     const newState = { ...state }
     newState.courses[selectedCourse].currentStudent = student
+    newState.courses[selectedCourse].studentPool = newPool
 
     return newState
 
   } else if (type === REMOVE_COURSE) {
-    // REMOVE Course
+    // * REMOVE Course
     const newCourses = { ...courses }
     delete newCourses[payload]
     const newSelectedCourse = selectedCourse === payload ? '' : selectedCourse
     return { ...state, selectedCourse: newSelectedCourse, courses: newCourses }
-  }
 
-  switch(type) {
+  } else if (type === REMOVE_STUDENT) {
+    // * REMOVE Student
+    const studentName = payload.trim()
+    const { students, studentPool } = courses[selectedCourse]
+    const newStudents = students.filter( student => student !== studentName)
+    const newPool = studentPool.filter( student => student !== studentName)
+    const newState = { ...state }
+    newState.courses[selectedCourse].students = newStudents
+    newState.courses[selectedCourse].studentPool = newPool
 
-    default: 
-      return state
+    return newState 
+
+  } else if (type === PAIR_STUDENTS) {
+    // * PAIR Students 
+    const { students } = course
+    const randomStudents = randomArray(students)
+    const newPairs = []
+    while(randomStudents.length > 0) {
+      const pair = randomStudents.splice(0, 1)
+      if (randomStudents.length > 0) {
+        pair.push(randomStudents.splice(0, 1)[0])
+      }
+      newPairs.push(pair)
+    }
+
+    const newCourse = { ...course, studentPairs: newPairs }
+    const newState = { ...state }
+    newState.courses[selectedCourse] = newCourse
+
+    return newState
+
+  } else {
+    return state
   }
 }
 

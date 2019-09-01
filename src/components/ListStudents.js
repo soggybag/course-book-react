@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { removeStudent } from '../actions'
 
 import './ListStudents.css'
 
@@ -26,9 +27,9 @@ function ListStudents(props) {
         <button
         className="add-remove"
         onClick={(e) => {
-          
+          props.removeStudent(student)
         }}
-      >&#x2b;</button>
+      >&#x2212;</button>
     </div>
     )
   })
@@ -51,7 +52,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = () => {
   return {
-
+    removeStudent
   }
 }
 

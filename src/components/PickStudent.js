@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { pickStudent } from '../actions'
+import { pickStudent, pairStudents } from '../actions'
 
 import './PickStudent.css'
 
@@ -9,9 +9,15 @@ function PickStudent(props) {
     <div className="PickStudent">
       <button
         onClick={() => {
-        props.pickStudent()
+          props.pickStudent()
         }}
       >Pick Student</button>
+
+      <button
+        onClick={() => {
+          props.pairStudents()
+        }}
+      >Pair Student</button>
     </div>
   )
 }
@@ -24,7 +30,8 @@ const mapStateToProps = (state) => {
 
 const mapDipsatchToProps = () => {
   return {
-    pickStudent
+    pickStudent,
+    pairStudents
   }
 }
 

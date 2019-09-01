@@ -23,7 +23,3 @@ export const saveState = (state) => {
   }
 }
 
-export const random = (n) => {
-  return Math.floor(Math.random() * n)
-}
-

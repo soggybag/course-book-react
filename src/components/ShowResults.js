@@ -1,6 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
+import ShowPairs from './ShowPairs'
+
 import './ShowResults.css'
 
 function ShowResults(props) {
@@ -8,6 +10,7 @@ function ShowResults(props) {
     <div className="ShowResults">
       <h2>Results</h2>
       <p>{props.currentStudent}</p>
+      <ShowPairs pairs={props.studentPairs} />
     </div>
   )
 } 
@@ -21,10 +24,11 @@ const mapStateToProps = (state) => {
   }
 
   const course = courses[selectedCourse]
-  const { currentStudent } = course
+  const { currentStudent, studentPairs } = course
 
   return {
-    currentStudent
+    currentStudent, 
+    studentPairs
   }
 }
 

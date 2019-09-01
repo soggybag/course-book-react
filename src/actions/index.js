@@ -5,6 +5,7 @@ export const SELECT_STUDENT = 'SELECT_STUDENT'
 export const PICK_STUDENT = 'PICK_STUDENT'
 export const REMOVE_COURSE = 'REMOVE_COURSE'
 export const PAIR_STUDENTS = 'PAIR_STUDENTS'
+export const REMOVE_STUDENT = 'REMOVE_STUDENT'
 
 export const addCourse = (courseName) => {
   return {
@@ -40,10 +41,15 @@ export const removeCourse = (index) => {
   }
 }
 
+export const removeStudent = (student) => {
+  return {
+    type: REMOVE_STUDENT,
+    payload: student
+  }
+} 
+
 export const pairStudents = () => {
   return {
     type: PAIR_STUDENTS
   }
 }
-
-
