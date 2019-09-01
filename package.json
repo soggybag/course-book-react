@@ -1,7 +1,7 @@
 {
   "name": "course-book-react",
   "version": "0.1.0",
-  "homepage": "https://soggybag.github.io/course-book-react",
+  "homepage": "https://soggybag.github.io/course-book-react/",
   "private": true,
   "dependencies": {
     "gh-pages": "^2.1.1",

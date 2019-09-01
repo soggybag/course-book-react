@@ -17,7 +17,7 @@ function PickStudent(props) {
         onClick={() => {
           props.pairStudents()
         }}
-      >Pair Student</button>
+      >Pair Students</button>
     </div>
   )
 }
