@@ -1,0 +1,5 @@
+.ListStudents {
+  display: flex;
+  flex-direction: column;
+  
+}

@@ -1,0 +1,4 @@
+.PickStudent {
+  display: flex;
+  flex-direction: column;
+}
