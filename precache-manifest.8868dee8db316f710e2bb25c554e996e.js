@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9d1ec53a2a0e9088c26823077c651cab",
+    "revision": "1f13e53885b461f6464a0032c960fd7f",
     "url": "/course-book-react/index.html"
   },
   {
-    "revision": "44f5a589995204f14d10",
+    "revision": "a2711700af138accce09",
     "url": "/course-book-react/static/css/main.3a10d240.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/course-book-react/static/js/2.5fa144cb.chunk.js"
   },
   {
-    "revision": "44f5a589995204f14d10",
-    "url": "/course-book-react/static/js/main.dcc5c259.chunk.js"
+    "revision": "a2711700af138accce09",
+    "url": "/course-book-react/static/js/main.357768b1.chunk.js"
   },
   {
     "revision": "daf77401d2a3b2e47666",
