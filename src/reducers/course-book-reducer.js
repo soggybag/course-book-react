@@ -18,6 +18,17 @@ const makeCourse = (name) => {
   }
 }
 
+// TODO: Make list of all possible pairings
+const makePairs = (arr) => {
+  const pairs = []
+  for (let i = 0; i < arr.length; i += 1) {
+    for (let j = i; j < arr.length; j += 1) {
+      pairs.push([arr[i], arr[j]])
+    }
+  }
+  return pairs 
+}
+
 const courseBookReducer = (state = defaultState(), action) => {
   const { type, payload } = action
   const { courses, selectedCourse } = state
@@ -98,7 +109,12 @@ const courseBookReducer = (state = defaultState(), action) => {
 
   } else if (type === PAIR_STUDENTS) {
     // * PAIR Students 
-    const { students } = course
+    const { students, studentPairs } = course
+    
+    // if (studentPairs.length === 0) {
+    //   studentPairs = makePairs(randomArray(students))
+    // }
+
     const randomStudents = randomArray(students)
     const newPairs = []
     while(randomStudents.length > 0) {

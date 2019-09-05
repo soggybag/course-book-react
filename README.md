@@ -28,7 +28,7 @@ Add students to a course in the center column. Pick a random student by clicking
 
 ## Contributions
 
-If you'd like to contribut to this project please do! Take a look at the list of todos below. 
+If you'd like to contribut to this project please do! Take a look at the list of todos below. Then take a look at the [Contributing](contributing.md) guidelines.
 
 ## Todo
 
