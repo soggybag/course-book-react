@@ -38,9 +38,11 @@ If you'd like to contribut to this project please do! Take a look at the list of
   - + and - buttons should equal height and width
   - Responsive design
     - Shows single column on mobile with columns sliding left and right. 
+    - Should work well on mobile
+    - Can be saved to home screen see PWA below
 - UI Improvements 
-  - Should show a wanring and not clear when entering a name that exists for a course or student
-  - Students currently display as a buttons. There is no function for clicking a student they should display as text. Like the names in the pairs list. 
+  - Should show a warning and not clear then innput when entering a name that exists for a course or student
+  - Clicking a student's in the class roster should "pick" that student.
     - Editing students might be useful in the future or clicking a student to select a student not randomly might be good.
 - PWA FTW! This could be turned into a Progressive Web App. 
   - Should run offline
