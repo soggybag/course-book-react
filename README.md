@@ -4,7 +4,7 @@ Create a course, add students, then easily pick a random student, or create a li
 
 Check it out live on GItHub Pages [here](https://soggybag.github.io/course-book-react/). 
 
-This app stores everything in local storage so all of the courses and students should be there again when you return _provided your are visitng the site from the same computer!_. 
+This app stores everything in local storage so all of the courses and students should be there again when you return _provided your are visitng the site from the same computer!_
 
 ## Features
 
@@ -47,7 +47,7 @@ If you'd like to contribut to this project please do! Take a look at the list of
 - PWA FTW! This could be turned into a Progressive Web App. 
   - Should run offline
 - Names of students and courses muct be unique
-  - Need to check case on this. Currently names are trimmed of white space. Names should keep case but checked for match regardless of case. 
+  - Need to check case on this. Currently names are trimmed of white space. Names should keep case but checked for match regardless of case.
 - Need feedback on usage 
 - All pairs combinations 
   - The app should generate a different list of pairs until all possible combinations have been used. 
