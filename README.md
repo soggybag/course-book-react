@@ -32,14 +32,10 @@ If you'd like to contribut to this project please do! Take a look at the list of
 
 ## Todo
 
-- CSS styles improvements
-  - Add some color
-  - + and - should be larger
-  - + and - buttons should equal height and width
-  - Responsive design
-    - Shows single column on mobile with columns sliding left and right. 
-    - Should work well on mobile
-    - Can be saved to home screen see PWA below
+- Responsive design
+  - Shows single column on mobile with columns sliding left and right. 
+  - Should work well on mobile
+  - Can be saved to home screen see PWA below
 - UI Improvements 
   - Should show a warning and not clear then innput when entering a name that exists for a course or student
   - Clicking a student's in the class roster should "pick" that student.
