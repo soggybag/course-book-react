@@ -32,6 +32,9 @@ If you'd like to contribut to this project please do! Take a look at the list of
 
 ## Todo
 
+- Contributions 
+  - Complete the [Contributing guide](contributing.md)
+  - Move todos into issues and tag
 - CSS styles improvements
   - Add some color
   - + and - should be larger
