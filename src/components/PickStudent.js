@@ -8,14 +8,16 @@ function PickStudent(props) {
   return (
     <div className="PickStudent">
       <button
+        className="notice-color"
         onClick={() => {
           props.pickStudent()
         }}
       >Pick Student</button>
 
       <button
+        className="notice-color"
         onClick={() => {
-          props.pairStudents()
+        props.pairStudents()
         }}
       >Pair Students</button>
     </div>

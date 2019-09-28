@@ -29,7 +29,7 @@ class AddStudent extends Component {
           }}
         />
         <button
-          className="add-remove"
+          className="add-remove notice-color"
           onClick={(e) => {
             this.addNewStudent()
           }}

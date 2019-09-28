@@ -1,2 +1,7 @@
 
-
+.column-content {
+    border-radius: 10px;
+    background: #eeeeee;
+    border: 2px solid #dddddd;
+    color: #333333;
+}

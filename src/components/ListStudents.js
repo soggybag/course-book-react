@@ -16,7 +16,7 @@ function ListStudents(props) {
         key={`${student}-${i}`}
       >
         <button
-          className="select-list"
+          className="select-list text-color-black"
           key={`${student}-${i}`}
           onClick={() => {
 
@@ -25,7 +25,7 @@ function ListStudents(props) {
           {student}
         </button>
         <button
-        className="add-remove"
+        className="add-remove danger-color"
         onClick={(e) => {
           props.removeStudent(student)
         }}

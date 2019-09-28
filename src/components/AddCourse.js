@@ -23,13 +23,14 @@ class AddCourse extends Component {
         <input
           type="text"
           placeholder="Add a course"
+          className="AddCourseInput"
           value={this.state.name}
           onChange={(e) => {
             this.setState({ name: e.target.value })
           }}
         />
         <button
-          className="add-remove"
+          className="add-remove notice-color"
           onClick={(e) => {
             this.addNewCourse()
           }}
