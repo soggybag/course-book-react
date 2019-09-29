@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/course-book-react/static/css/main.3a10d240.chunk.css",
-    "main.js": "/course-book-react/static/js/main.357768b1.chunk.js",
-    "main.js.map": "/course-book-react/static/js/main.357768b1.chunk.js.map",
+    "main.js": "/course-book-react/static/js/main.1ae6907e.chunk.js",
+    "main.js.map": "/course-book-react/static/js/main.1ae6907e.chunk.js.map",
     "runtime~main.js": "/course-book-react/static/js/runtime~main.cf17ea87.js",
     "runtime~main.js.map": "/course-book-react/static/js/runtime~main.cf17ea87.js.map",
     "static/js/2.5fa144cb.chunk.js": "/course-book-react/static/js/2.5fa144cb.chunk.js",
     "static/js/2.5fa144cb.chunk.js.map": "/course-book-react/static/js/2.5fa144cb.chunk.js.map",
     "index.html": "/course-book-react/index.html",
-    "precache-manifest.8868dee8db316f710e2bb25c554e996e.js": "/course-book-react/precache-manifest.8868dee8db316f710e2bb25c554e996e.js",
+    "precache-manifest.8819be9bf2793c09e16a67d80eb07e86.js": "/course-book-react/precache-manifest.8819be9bf2793c09e16a67d80eb07e86.js",
     "service-worker.js": "/course-book-react/service-worker.js",
     "static/css/main.3a10d240.chunk.css.map": "/course-book-react/static/css/main.3a10d240.chunk.css.map"
   }
