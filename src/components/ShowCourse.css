@@ -1,7 +1,10 @@
 .ShowCourse {
-  background-color: #eee;
   margin: 0.5em;
   padding: 0.5em;
   align-self: stretch;
   flex: 1;
+  background: #eeeeee;
+  border: 2px solid #dddddd;
+  border-radius: 7px;
+  color: #333333;
 }

@@ -12,7 +12,7 @@ function ListCourses(props) {
         className="group-list-item"
       >
         <button
-          className="select-list"
+          className={"select-list " + (props.selectedCourse === course ? "selected-color" : "")}
           onClick={() => {
             props.selectCourse(course)
           }}
@@ -20,7 +20,7 @@ function ListCourses(props) {
           {course}
         </button>
         <button
-          className="add-remove"
+          className="add-remove danger-color"
           onClick={() => {
             props.removeCourse(course)
           }}
@@ -36,9 +36,11 @@ function ListCourses(props) {
 }
 
 const mapStateToProps = ({courseBook}) => {
-  const courses = Object.keys(courseBook.courses)
+  const courses = Object.keys(courseBook.courses);
+  const selectedCourse = courseBook.selectedCourse;
   return {
-    courses
+    courses,
+    selectedCourse
   }
 }
 
