@@ -3,14 +3,15 @@ import { random, randomArray } from 'really-random'
 
 const defaultState = () => {
   return {
-    courses: {}, 
+    courses: {},
     selectedCourse: ''
   }
 }
 
-const makeCourse = (name) => {
+const makeCourse = (hash, name) => {
   return {
-    name, 
+    hash: hash,
+    name: name,
     students: [],
     studentPool: [],
     studentPairs: [],
@@ -26,7 +27,7 @@ const makePairs = (arr) => {
       pairs.push([arr[i], arr[j]])
     }
   }
-  return pairs 
+  return pairs
 }
 
 const courseBookReducer = (state = defaultState(), action) => {
@@ -35,27 +36,30 @@ const courseBookReducer = (state = defaultState(), action) => {
   const course = courses[selectedCourse]
 
   if (type === ADD_COURSE) {
-    // ADD Course 
+    // ADD Course
     const newCourseName = payload.trim()
-    if (courses[newCourseName] !== undefined) {
+    const hashCourseName = payload.trim().toUpperCase()
+    console.log(newCourseName, hashCourseName)
+    if (courses[hashCourseName] !== undefined) {
       return state
     }
-    const newCourse = makeCourse(newCourseName)
+    // pushing. here's the fix.
+    const newCourse = makeCourse(hashCourseName, newCourseName)
     const coursesCopy = { ...courses }
-    coursesCopy[newCourseName] = newCourse
+    coursesCopy[hashCourseName] = newCourse
 
     return { ...state, courses: coursesCopy }
 
   } else if (type === SELECT_COURSE) {
     // * SELECT Course
-    const newState = { ...state, selectedCourse: payload } 
+    const newState = { ...state, selectedCourse: payload }
     return newState
 
   } else if (type === ADD_STUDENT) {
     // ADD Student
     const studentName = payload.trim()
     const { students } = course
-    
+
     // Avoid dudplicate name
     if (students.indexOf(studentName) !== -1) {
       return state
@@ -65,7 +69,7 @@ const courseBookReducer = (state = defaultState(), action) => {
     const newStudents = [ ...students, studentName ]
     const newState = { ...state }
     newState.courses[selectedCourse].students = newStudents
-   
+
     return newState
 
   } else if (type === PICK_STUDENT) {
@@ -105,12 +109,12 @@ const courseBookReducer = (state = defaultState(), action) => {
     newState.courses[selectedCourse].students = newStudents
     newState.courses[selectedCourse].studentPool = newPool
 
-    return newState 
+    return newState
 
   } else if (type === PAIR_STUDENTS) {
-    // * PAIR Students 
+    // * PAIR Students
     const { students, studentPairs } = course
-    
+
     // if (studentPairs.length === 0) {
     //   studentPairs = makePairs(randomArray(students))
     // }
